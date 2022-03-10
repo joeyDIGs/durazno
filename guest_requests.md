@@ -85,6 +85,7 @@ John has exactly 3 requests.
 Marina requested only one time.
 We sort the result table by guest_name in ascending request, by guest_id in ascending request, and by request_date in descending request in case of a tie.
 
+# SQL data seed code
 ```sql
 Create table If Not Exists Guests (guest_id int, name varchar(10));
 Create table If Not Exists Requests (request_id int, request_date date, guest_id int, estimated_cost int);
