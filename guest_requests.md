@@ -85,20 +85,21 @@ John has exactly 3 requests.
 Marina requested only one time.
 We sort the result table by guest_name in ascending request, by guest_id in ascending request, and by request_date in descending request in case of a tie.
 
-# SQL data seed code
+# Execution
+Please head to [db-fiddle](https://www.db-fiddle.com/) and share your screen to collaborate.
+
+1. select the latest postgres database from the top-left corner
+1. Use the following code to seed the database
+
 ```sql
 Create table If Not Exists Guests (guest_id int, name varchar(10));
 Create table If Not Exists Requests (request_id int, request_date date, guest_id int, estimated_cost int);
-
--- Truncate table Guests
 
 insert into Guests (guest_id, name) values ('1', 'Phil');
 insert into Guests (guest_id, name) values ('2', 'John');
 insert into Guests (guest_id, name) values ('3', 'Anna');
 insert into Guests (guest_id, name) values ('4', 'Marina');
 insert into Guests (guest_id, name) values ('5', 'Kai');
-
--- Truncate table Requests
 
 insert into Requests (request_id, request_date, guest_id, estimated_cost) values ('1', '2020-07-31', '1', '30');
 insert into Requests (request_id, request_date, guest_id, estimated_cost) values ('2', '2020-7-30', '2', '40');
@@ -110,5 +111,6 @@ insert into Requests (request_id, request_date, guest_id, estimated_cost) values
 insert into Requests (request_id, request_date, guest_id, estimated_cost) values ('8', '2020-08-03', '1', '99');
 insert into Requests (request_id, request_date, guest_id, estimated_cost) values ('9', '2020-08-07', '2', '32');
 insert into Requests (request_id, request_date, guest_id, estimated_cost) values ('10', '2020-07-15', '1', '2');
-
 ```
+
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/11221303/158402044-339c3c5f-095b-45bc-97ff-69b4514f04cf.png">
