@@ -6,6 +6,7 @@ alias pip='python -m pip'
 alias pbuild='python3 -m build'
 alias pdeploy='python3 -m twine upload --repository jfrog dist/*'
 alias pbd='pbuild && pdeploy'
+ptest='python3 -m unittest discover -s ./ -p "test_*.py"'
 
 # --- conda
 alias clist="conda env list"
